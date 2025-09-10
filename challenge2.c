@@ -4,13 +4,17 @@ struct etudiant{
 	
 	char nom[50];
 	char prenom[50];
-	int note[10];
+	int note;
 };
 
 int main(){
 	int n,i;
-	printf("entrer le nombre des utudiants : ");
-	scanf("%d",&n);
+	do{
+	printf("entrer le nombre des etudiants : ");
+	scanf("%d",&n);		
+	}while (n<1);
+
+
 	
 	struct etudiant e[n];
 	
@@ -20,7 +24,7 @@ int main(){
 		printf("entrer le prenom de %d etudiant :",i+1);
 		scanf("%s",e[i].prenom);
 		printf("entrer la note de %d etudiant :",i+1);
-		scanf("%s",&e[i].note);	
+		scanf("%d",&e[i].note);	
 	}
 	
 	for (i = 0; i < n; i++) {
